@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctjjkkei7b3se"]
+
+[ext_resource type="Script" uid="uid://bmwl2bvg2epkb" path="res://Strategy/Strategies/MeleeHitbox.cs" id="1_mhmlh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tbfr"]
+size = Vector2(7, 6)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_mhmlh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_7tbfr")

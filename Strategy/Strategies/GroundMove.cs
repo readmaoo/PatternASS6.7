@@ -5,7 +5,6 @@ public class GroundMove : IMovement
     private const float Speed = 200f;
     private const float JumpVelocity = -400f;
     private const float Gravity = 980f;
-
     public void Apply(Intent i, CharacterBody2D body, float dt)
     {
         var anim = body.GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");
@@ -19,8 +18,7 @@ public class GroundMove : IMovement
             v.Y = JumpVelocity;
         body.Velocity = v;
         body.MoveAndSlide();
-        if (anim == null) return; 
-        if (anim.Animation == "attack" && anim.IsPlaying())
+        if ((anim.Animation == "attack" || anim.Animation == "hit") && anim.IsPlaying())
         {
             const float dirEpsA = 5f;
             if (v.X > dirEpsA) anim.FlipH = false;
