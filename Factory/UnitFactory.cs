@@ -14,7 +14,4 @@ public static class UnitFactory
         }
     }
 
-    
-    public static Node CreateUnit(string unitType, Unit owner)
-        => CreateUnit(unitType, owner.PlayerIndex);
 }

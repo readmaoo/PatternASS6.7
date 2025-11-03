@@ -12,7 +12,7 @@ public partial class Unit : CharacterBody2D
     public float DamageMultiplier { get; set; } = 1f;
 
     private bool _inited;
-    private bool _dead;                     // ← добавили
+    private bool _dead;                
     private IController _controller;
     private IMovement _movement;
     private IAttack _attack;
@@ -33,7 +33,7 @@ public partial class Unit : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
-        if (_dead) return;                  // ← мёртвый ничего не делает
+        if (_dead) return;              
         if (_controller == null || _movement == null) return;
 
         var i = _controller.GetIntent();
